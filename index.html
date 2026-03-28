@@ -4,30 +4,36 @@
     <meta charset="UTF-8">
     <title>Social Media Plans</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/EstilosP.css">
-</head>
-<body>
-
-<section class="container">
-    <div class="hero">
-
-    <!-- TEXTO -->
-    <div class="hero-text">
-        <h1>SOCIAL MEDIA<br>PLANS</h1>
-        <p>Construcción de marca estratégica en RS</p>
-    </div>
 
     <!-- ICONOS -->
-    <img src="imagenes/amor.ico" class="icon icon-mega">
-    <img src="imagenes/megafono.ico" class="icon icon-like">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/EstilosP.css">
+</head>
 
-    <!-- LOGO -->
-    <img src="img/logo.png" class="logo">
+<body>
 
-</div>
+<!-- HERO -->
+<section class="container">
+
+    <div class="hero">
+
+        <div class="hero-text">
+            <h1>SOCIAL MEDIA<br>PLANS</h1>
+            <p>Construcción de marca estratégica en RS</p>
+        </div>
+
+        <!-- ICONOS -->
+        <img src="imagenes/megafono.ico" class="icon icon-mega">
+        <img src="imagenes/amor.ico" class="icon icon-heart">
+
+    </div>
+
+    <!-- TITULO -->
     <h1 class="title">SOCIAL MEDIA PLANS</h1>
 
+    <!-- CARDS -->
     <div class="cards">
 
         <!-- PANEL 1 -->
@@ -36,7 +42,7 @@
             <ul>
                 <li>Asesoría mensual</li>
                 <li>16 publicaciones</li>
-                <li>manejo de 1 red social</li>
+                <li>Manejo de 1 red social</li>
                 <li>Pauta de $15.00 mensuales</li>
             </ul>
             <h2>DESDE</h2>
@@ -48,12 +54,10 @@
         <div class="card">
             <span class="badge">Crecimiento</span>
             <ul>
-                <li>Estrategia de marketing.</li>
+                <li>Estrategia de marketing</li>
                 <li>23 publicaciones mensuales</li>
-                <li>manejo de 2 redes sociales</li>
-                <li>pauta de
-                    $25.00 mensuales
-                </li>
+                <li>Manejo de 2 redes sociales</li>
+                <li>Pauta de $25.00 mensuales</li>
             </ul>
             <h2>DESDE</h2>
             <h1>$199</h1>
@@ -64,12 +68,10 @@
         <div class="card">
             <span class="badge">Posicionamiento</span>
             <ul>
-
-                <li>Estrategia de marquetin</li>
-                <li>asesoria mensual</li>
-                <li>29 publicaciones mensuales</li>
-                <li>Manejo de 3 redes sociales</li>
-                <li>Manejo de pautas</li>
+                <li>Estrategia de marketing</li>
+                <li>Asesoría mensual</li>
+                <li>29 publicaciones</li>
+                <li>Manejo de 3 redes</li>
             </ul>
             <h2>DESDE</h2>
             <h1>$299</h1>
@@ -81,10 +83,8 @@
             <span class="badge">Expansión</span>
             <ul>
                 <li>Estrategia de marketing</li>
-                <li>35 publicaciones mensuales</li>
-                <li>Manejo de 3 redes sociales</li>
-                <li>4 Pautas mensuales</li>
-                <li>GoogleAdds</li>
+                <li>35 publicaciones</li>
+                <li>Manejo de redes</li>
             </ul>
             <h2>DESDE</h2>
             <h1>$399</h1>
@@ -96,21 +96,65 @@
             <span class="badge">Premium</span>
             <ul>
                 <li>Estrategia de marketing</li>
-                <li>Manejo de 3 redes sociales</li>
-                <li>41 publicaciones Mensuales</li>
-                <li>4 Pautas mensuales</li>
-                <li>Diseño de pagina web informativa</li>
+                <li>41 publicaciones</li>
+                <li>Diseño web</li>
             </ul>
             <h2>DESDE</h2>
             <h1>$799</h1>
             <button>Adquirir</button>
         </div>
 
-      
-        
+    </div>
+
+</section>
+
+<!-- 🔥 SECCIÓN DETALLE (BIEN UBICADA) -->
+<section class="detalle">
+
+    <div class="detalle-container">
+
+        <div class="detalle-left">
+            <div class="mini-card">
+                <span class="badge">Impulso</span>
+                <h2>DESDE</h2>
+                <h1>$129</h1>
+                <button class="btn-detalle">Adquirir Plan</button>
+            </div>
+        </div>
+
+        <div class="detalle-right">
+            <h2>¿QUÉ INCLUYE ESTE PLAN?</h2>
+
+            <div class="detalle-box">
+                <p>Reunión de asesoría mensual.</p>
+                <p>Diseño de estrategia básica</p>
+                <p>Plan de contenido mensual</p>
+                <p>Manejo de redes sociales</p>
+                <p>Publicaciones mensuales</p>
+                <p>Stories + reels</p>
+                <p>Copywriting</p>
+                <p>Pauta incluida</p>
+                <p>Reporte de estadísticas</p>
+            </div>
+
+            
+        </div>
 
     </div>
+
 </section>
+
+<!-- JS LIMPIO -->
+<script>
+document.addEventListener("mousemove", (e) => {
+    const x = (window.innerWidth / 2 - e.pageX) / 50;
+    const y = (window.innerHeight / 2 - e.pageY) / 50;
+
+    document.querySelectorAll(".icon").forEach((icon) => {
+        icon.style.transform = `translate(${x}px, ${y}px)`;
+    });
+});
+</script>
 
 </body>
 </html>
