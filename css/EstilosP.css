@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+body {
+    background: #0b0b0b;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* FONDO LUZ */
 body::before {
     content: "";
     position: fixed;
@@ -16,55 +23,83 @@ body::before {
     z-index: 0;
 }
 
-body {
-    background: #0b0b0b;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-}
-
 /* ===== SECCIONES ===== */
 section {
     padding: 70px 5%;
 }
 
-/* 🔥 HERO SIN ESPACIO RARO */
 .container {
-    padding-top: 10px !important;
+    padding-top: 20px;
 }
 
 /* ===== HERO ===== */
 .hero {
     position: relative;
     max-width: 1100px;
-    margin: 0 auto 40px;
+    margin: auto;
 }
 
-/* ICONOS */
+/* ICONOS CONTENEDOR */
 .hero-icons {
     position: absolute;
     inset: 0;
+    pointer-events: none;
 }
 
+/* ICONOS BASE */
 .icon {
     position: absolute;
-    width: 70px;
-    opacity: 0.8;
+    font-size: 35px;
+    opacity: 0.6;
     z-index: 1;
+    transition: 0.3s;
 }
 
-/* 🔥 MEGÁFONO ARREGLADO */
+/* POSICIONES */
 .icon-mega {
     top: 20px;
     left: 20px;
+    width: 60px;
 }
 
-/* CORAZÓN */
 .icon-heart {
     top: 20px;
     right: 20px;
+    width: 60px;
 }
 
-/* TEXTO */
+.icon-like {
+    bottom: 40px;
+    left: 10%;
+}
+
+.icon-smile {
+    bottom: 40px;
+    right: 10%;
+}
+
+.icon-instagram {
+    top: 40%;
+    left: 5%;
+}
+
+.icon-facebook {
+    top: 50%;
+    right: 8%;
+}
+
+.icon-tiktok {
+    bottom: 25%;
+    left: 45%;
+}
+
+/* HOVER ICONOS */
+.icon:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* TEXTO HERO */
 .hero-text {
     position: relative;
     z-index: 2;
@@ -81,7 +116,7 @@ section {
     color: #aaa;
 }
 
-/* ===== TITLE ===== */
+/* ===== TITULO ===== */
 .title {
     text-align: center;
     margin: 40px 0;
@@ -97,39 +132,24 @@ section {
     gap: 25px;
 }
 
-/* TARJETA PRO */
 .card {
     background: linear-gradient(180deg, #1a1a1a, #0d0d0d);
     border: 1px solid #222;
     border-radius: 20px;
-    padding: 30px 25px 25px;
+    padding: 30px 25px;
     position: relative;
     transition: 0.3s;
-    overflow: hidden;
-}
-
-/* 🔥 EFECTO INTERACTIVO */
-.card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at top, rgba(255,215,0,0.15), transparent);
-    opacity: 0;
-    transition: 0.3s;
-}
-
-.card:hover::before {
-    opacity: 1;
 }
 
 .card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.25);
 }
 
-/* BADGE ARREGLADO */
+/* BADGE */
 .badge {
     position: absolute;
-    top: 15px; /* 🔥 ya no negativo */
+    top: 15px;
     left: 20px;
     background: linear-gradient(135deg, #ffd700, #ffb800);
     color: #000;
@@ -148,21 +168,15 @@ section {
 .card ul li {
     margin-bottom: 10px;
     color: #ccc;
-    font-size: 14px;
 }
 
-/* PRECIOS */
-.card h2 {
-    color: #888;
-    font-size: 13px;
-}
-
+/* PRECIO */
 .card h1 {
     font-size: 30px;
     margin: 10px 0;
 }
 
-/* BOTÓN PRO */
+/* BOTÓN */
 button {
     width: 100%;
     padding: 12px;
@@ -172,15 +186,13 @@ button {
     color: #000;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 button:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(255, 200, 0, 0.4);
 }
 
-/* ===== DETALLE ===== */
+/* ===== SECCIONES ABAJO ===== */
 .detalle-container,
 .detalle-pro-container,
 .extras-container,
@@ -192,7 +204,7 @@ button:hover {
     gap: 40px;
 }
 
-/* CAJAS UNIFICADAS */
+/* CAJAS */
 .mini-card,
 .card-pro,
 .detalle-pro-box,
@@ -208,164 +220,50 @@ button:hover {
 .detalle-pro-box p,
 .detalle-box p {
     color: #ccc;
-    margin-bottom: 8px;
 }
 
-/* ===== RESPONSIVE MOBILE ===== */
+/* ===== ANIMACIÓN ===== */
+.card, .mini-card, .card-pro, .detalle-pro-box {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
 
-    /* SECCIONES */
     section {
         padding: 50px 20px;
     }
 
-    .title {
-        font-size: 28px;
-        margin: 30px 0;
-    }
-
-    /* HERO */
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-
-    .hero-text {
-        text-align: center;
-    }
-
     .hero-text h1 {
         font-size: 38px;
-        line-height: 1.1;
     }
 
-    .hero-text p {
-        font-size: 14px;
-        max-width: 280px;
-        margin: 10px auto;
-    }
-
-    /* ICONOS */
-    .icon {
-        width: 45px;
-        opacity: 0.4;
-    }
-
-    /* CARDS */
     .cards {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
 
-    .card {
-        padding: 30px 20px;
-        border-radius: 18px;
-    }
-
-    .card h1 {
-        font-size: 34px;
-    }
-
-    .card ul li {
-        font-size: 15px;
-    }
-
-    /* BOTONES */
-    button {
-        padding: 15px;
-        font-size: 16px;
-        border-radius: 30px;
-    }
-
-    /* GRIDS ABAJO */
     .detalle-container,
     .detalle-pro-container,
     .extras-container,
     .faq-container {
         grid-template-columns: 1fr;
-        text-align: center;
     }
 
-    /* QUITAR EFECTOS HOVER EN MOBILE */
-    .card,
-    .mini-card,
-    .card-pro {
-        transform: none !important;
+    .icon {
+        font-size: 24px;
+        opacity: 0.3;
     }
 
-    .card:hover {
-        transform: none;
-    }
-}
-
-/* SCROLL SUAVE */
-html {
-    scroll-behavior: smooth;
-}
-
-/* ANIMACIONES */
-.card, .mini-card, .card-pro, .detalle-pro-box {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s ease;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-.card:hover {
-    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.25),
-                0 0 20px rgba(255, 215, 0, 0.15);
-}
-button:active {
-    transform: scale(0.95);
-}
-.card ul li {
-    transition: 0.2s;
-}
-
-.card ul li:hover {
-    color: #fff;
-    transform: translateX(5px);
-}
-
-/*para los emojies*/
-.icon-like,
-.icon-smile {
-    position: absolute;
-    font-size: 40px;
-    opacity: 0.6;
-}
-
-/* posiciones */
-.icon-like {
-    bottom: 30px;
-    left: 10%;
-}
-
-.icon-smile {
-    bottom: 40px;
-    right: 12%;
-}
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-.icon {
-    animation: float 4s ease-in-out infinite;
-}
-@media (max-width: 768px) {
-    .icon-like,
-    .icon-smile {
-        font-size: 28px;
-        opacity: 0.4;
+    .icon-instagram,
+    .icon-facebook,
+    .icon-tiktok {
+        display: none;
     }
 }
