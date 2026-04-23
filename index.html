@@ -354,7 +354,7 @@
 <div class="extras-container">
 
     <div class="extras-left">
-        <img src="imagenes/phone.png" alt="telefono">
+        <img src="imagenes/telefono.png" alt="telefono">
     </div>
 
     <div class="extras-right">
@@ -390,10 +390,6 @@
     <div class="faq-container">
 
 
-    <div class="faq-left">
-        <img src="imagenes/persona.jpg" alt="persona">
-    </div>
-
     <div class="faq-right">
         <h2>Preguntas frecuentes</h2>
 
@@ -414,16 +410,56 @@
 
 </section>
 <!-- EMOJIS -->
-        <div class="icon icon-like">👍</div>
-        <div class="icon icon-smile">😄</div>
-
-        <!-- REDES SOCIALES -->
-        <i class="icon icon-instagram fa-brands fa-instagram"></i>
-        <i class="icon icon-facebook fa-brands fa-facebook"></i>
-        <i class="icon icon-tiktok fa-brands fa-tiktok"></i>
+        <div class="floating-icons">
+    <div class="icon icon-like">👍</div>
+    <div class="icon icon-smile">😄</div>
+    <i class="icon icon-instagram fa-brands fa-instagram"></i>
+    <i class="icon icon-facebook fa-brands fa-facebook"></i>
+    <i class="icon icon-tiktok fa-brands fa-tiktok"></i>
+</div>
     </div>
 <!-- ===== JS ===== -->
 
+<div class="floating-icons">
+    <div class="icon icon-like">👍</div>
+    <div class="icon icon-smile">😄</div>
+    <i class="icon icon-instagram fa-brands fa-instagram"></i>
+    <i class="icon icon-facebook fa-brands fa-facebook"></i>
+    <i class="icon icon-tiktok fa-brands fa-tiktok"></i>
+</div>
+
+<section class="about">
+    <div class="about-container">
+
+        <h2>¿QUIÉNES SOMOS?</h2>
+
+        <p>
+            Somos una corporación que ofrece ideas innovadoras, 
+            para todo tipo de problema visual.
+        </p>
+
+        <p>
+            A través del acompañamiento al cliente brindamos 
+            servicios personalizados.
+        </p>
+
+    </div>
+</section>
+
+<section class="services">
+    <h2>CONOCE NUESTROS SERVICIOS</h2>
+
+    <div class="services-container">
+
+        <div class="service-card">Desarrollo Web</div>
+        <div class="service-card">Publicidad</div>
+        <div class="service-card">Arquitectura</div>
+        <div class="service-card">Arte y Confección</div>
+        <div class="service-card">Fotografía</div>
+        <div class="service-card">Multimedia</div>
+
+    </div>
+</section>
 <script>
 /* ICONOS SOLO DESKTOP */
 if (window.innerWidth > 768) {
@@ -438,7 +474,25 @@ if (window.innerWidth > 768) {
 }
 
 /* ANIMACIÓN SCROLL */
-const elements = document.querySelectorAll('.card, .mini-card, .card-pro, .detalle-pro-box');
+const elements = document.querySelectorAll(`
+.card, 
+.mini-card, 
+.card-pro, 
+.detalle-pro-box,
+.detalle-box,
+.detalle-left,
+.detalle-right,
+.detalle-pro-left,
+.detalle-pro-right,
+.extras-left,
+.extras-right,
+.faq-left,
+.faq-right,
+.faq-item,
+.row,
+.service-card,
+.about
+`);
 
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
